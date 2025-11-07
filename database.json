@@ -1,0 +1,16 @@
+{
+  "posts": [
+    { 
+      "id": "1", 
+      "title": "a title", 
+      "slug": "post-1",
+      "content": "omaga abc" 
+    },
+    { 
+      "id": "2", 
+      "title": "another title", 
+      "slug": "post-2",
+      "content": "gelo 234" 
+    }
+  ]
+}
