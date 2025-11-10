@@ -1,19 +1,18 @@
 'use client'
 import { createLike } from "@/app/actions";
-import { useState , useTransition} from "react";
+import { useTransition} from "react";
 export function LikeButton(){
-    const [pending,setPanding] = useState(false)
+    const [pending,setTransition] = useTransition()
 
-    async function handleAction(){
-        setPanding(true)
-        await createLike();
-
-        setPanding(false)
+    async function handleLike(){
+        setTransition(async () => {
+            await createLike()
+        })
     }
 
     return(
          <button className="bg-white text-black p-2 rounded"
-         onClick={handleAction}
+         onClick={handleLike}
          >
          {pending ? "liking..." : "like"}
          </button>
