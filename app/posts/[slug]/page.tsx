@@ -1,6 +1,6 @@
 import {Post} from "@/app/types/Post"
-import { createComment } from "@/app/actions"
-
+import CommentForm  from "@/app/posts/[slug]/comment-form"
+import { LikeButton } from "./like-button"
 async function getPost(slug:string): Promise<Post> {
 
     const res = await fetch('http://localhost:3003/posts/?slug=' + slug)
@@ -23,13 +23,12 @@ export default async function PostPage({ params }: {
         <article>
           <h1>{post.title}</h1>
           <h1>{post.content}</h1>
+          <hr className="my-2"/>
+          <LikeButton/>
         </article>
         <section className="mt-3 ml-2 " >
             <h2 className="text-lg">Comments</h2>
-            <form action={createComment} className="flex flex-col">
-                <textarea placeholder="Commentar here..." className="w-sm h-40 border border-white" name="comment"/>
-            <button className="mt-3 p-4 w-sm rounded-xl bg-blue-700">Submit comment</button>
-            </form>
+          <CommentForm/>
         </section>
         </>
     )
