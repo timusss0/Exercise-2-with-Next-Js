@@ -12,5 +12,8 @@
       "slug": "post-2",
       "content": "gelo 234" 
     }
-  ]
+  ],
+  "settings":{
+    "siteName":"Tia Blog"
+  }
 }

@@ -14,9 +14,7 @@ export default async function PostPage({ params }: {
 }) {
 
     const { slug } = await params
-
     const post = await getPost(slug)
-
     console.log(post)
 
     return (
