@@ -3,6 +3,7 @@ import { Source_Sans_3, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Header from "@/app/header"
+import {Footer} from "@/app/footer"
 
 const fontSans = Source_Sans_3({
   variable: "--font-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer/>
       </body>
     </html>
   );
